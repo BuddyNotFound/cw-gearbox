@@ -4,7 +4,7 @@ Config = {}
 -- ESX = exports["es_extended"]:getSharedObject() -- uncomment if you use ESX
 
 Config.Debug = false -- toggle this on if you have issues, BEFORE asking for help
-Config.OxLib = false
+Config.OxLib = false -- set to true if you use Oxlib, will otherwise default to QBcore. Make sure to double check fxmanifest if this is included or not
 Config.Notify = "ST" -- QB/ESX/OX/ST -- (ST = Standalone)
 
 Config.CwTuning = true -- Set to true if you use CW tuning and want to use that scripts gearbox swaps
