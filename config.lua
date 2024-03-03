@@ -1,5 +1,8 @@
 Config = {}
 
+-- QBCore = exports['qb-core']:GetCoreObject()  -- uncomment if you use QBCore
+-- ESX = exports["es_extended"]:getSharedObject() -- uncomment if you use ESX
+
 Config.Debug = false -- toggle this on if you have issues, BEFORE asking for help
 Config.Notify = "ST" -- QB/ESX/OX/ST -- (ST = Standalone)
 
