@@ -1,12 +1,5 @@
 local useDebug = Config.Debug
 
-local QBCore = nil
-if not Config.OxLib then
-    if useDebug then print('^3 OxLib is not enabled for CW gearbox. Creating Core Object') end
-    QBCore = exports['qb-core']:GetCoreObject()
-end
-
-
 local lowestGear = 0
 local topGear = 5
 local clutchUp = 1.0
@@ -28,14 +21,27 @@ local function isDriver(vehicle)
 end
 
 local function notify(text, type)
-    if Config.OxLib then
+    if Config.Notify == "OX" then
         lib.notify({
             title = text,
             type = type,
         })
-    else 
+    end
+    if Config.Notify == "QB" then
         QBCore.Functions.Notify(text, type)
     end
+    if Config.Notify == "ESX" then
+        ESX.ShowNotification(text, type)
+    end
+    if Config.Notify == "ST" then
+        Prompt(text)
+    end
+end
+
+function Prompt(msg) --Msg is part of the Text String at B
+	SetNotificationTextEntry("STRING")
+	AddTextComponentString(msg) -- B
+	DrawNotification(true, false) -- Look on that website for what these mean, I forget. I think one is about flashing or not
 end
 
 local OR, XOR, AND = 1, 3, 4
